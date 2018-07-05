@@ -1,0 +1,47 @@
+#######################################[INSTALELD]CAFFE
+[INSTALLED]KERNEL:4.4.0-31 generic
+[INSTALLED]NVIDIA Driver:
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 390.67                 Driver Version: 390.67                    |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  Quadro K600         Off  | 00000000:01:00.0  On |                  N/A |
+| 25%   49C    P8    N/A /  N/A |    212MiB /   980MiB |      1%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0      7663      G   /usr/lib/xorg/Xorg                           147MiB |
+|    0      8211      G   compiz                                        61MiB |
++-----------------------------------------------------------------------------+
+
+[INSTALLED]CUDA :
+nvcc: NVIDIA (R) Cuda compiler driver
+Copyright (c) 2005-2016 NVIDIA Corporation
+Built on Tue_Jan_10_13:22:03_CST_2017
+Cuda compilation tools, release 8.0, V8.0.61
+[INSTALLED]CUDNN:
+version :7_7.1.4.18-1+cuda8.0
+
+[INSTALELD]GCC:
+version 4.8.4
+
+[INSTALLED]boost:
+
+[INSTALELD]BLAS w/ ATLAS:
+
+what's left:
+1.pycaffe
+2.DIGITS
+
+############################ERROR
+
+Conflict between opencv-3.1 and cuda 8.0: [SOLVED]  change #if !defined (HAVE_CUDA) || defined (CUDA_DISABLER) to #if !defined (HAVE_CUDA) || defined (CUDA_DISABLER) || (CUDART_VERSION >= 8000)\
+
+Path lost:[SOLVED]1.make softlink by :ln [file1] [file2]  2.Set PATH vars on .bashrc
+
+

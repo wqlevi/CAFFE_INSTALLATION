@@ -36,12 +36,18 @@ version 4.8.4
 
 what's left:
 1.pycaffe
-2.DIGITS
+###########################################[INSTALLED]DIGITS
+[INSTALLED]caffe
+[INSTALLED]cuda8.0
 
+Start digits at: http://localhost/
 ############################ERROR
 
 Conflict between opencv-3.1 and cuda 8.0: [SOLVED]  change #if !defined (HAVE_CUDA) || defined (CUDA_DISABLER) to #if !defined (HAVE_CUDA) || defined (CUDA_DISABLER) || (CUDART_VERSION >= 8000)\
 
 Path lost:[SOLVED]1.make softlink by :ln [file1] [file2]  2.Set PATH vars on .bashrc
 
+Unable to access $sudo apt-get install digits  ,cuz such ppa source isn't a default repository in ubuntu.
+
+[Error]no modules named digits:
 

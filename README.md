@@ -1,5 +1,5 @@
-# CAFFE_INSTALLATION
-All the processes are done in enviroment of :
+# DIGITS&CAFFE_INSTALLATION
+All the processes are done in prerequisitng enviroment of :
 CUDA 8.0 
 OPENCV 3.1
 CUDNN 7.1

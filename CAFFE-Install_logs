@@ -35,7 +35,7 @@ version 4.8.4
 [INSTALELD]BLAS w/ ATLAS:
 
 what's left:
-1.pycaffe
+[INSTALLED]pycaffe
 ###########################################[INSTALLED]DIGITS
 [INSTALLED]caffe
 [INSTALLED]cuda8.0
@@ -45,9 +45,13 @@ Start digits at: http://localhost/
 
 Conflict between opencv-3.1 and cuda 8.0: [SOLVED]  change #if !defined (HAVE_CUDA) || defined (CUDA_DISABLER) to #if !defined (HAVE_CUDA) || defined (CUDA_DISABLER) || (CUDART_VERSION >= 8000)\
 
-Path lost:[SOLVED]1.make softlink by :ln [file1] [file2]  2.Set PATH vars on .bashrc
+Path lost:[SOLVED]1.make softlink by :ln [file1] [file2]  2.Set PATH vars on .bashrc 3.When set path of cuda under official guidance 
+,a loss of PATH may encountered, cuz PATH shall not be written in two seperated lines.
 
 Unable to access $sudo apt-get install digits  ,cuz such ppa source isn't a default repository in ubuntu.
 
 [Error]no modules named digits:
+
+[SOLVED][ERROR] CUDNN_STATUS_NOT_INITIALIZED： Verify the cudnn installation by run sample: ./mnistCUDNN , if still get same error,that indicates the 'cudnn.h' file is not found at dir:/usr/include.
+sloved by reinstall the cudnn in corresponding to the cuda and OS version.
 

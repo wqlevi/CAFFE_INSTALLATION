@@ -1,0 +1,18 @@
+After installation:
+[Create dataset]:
+      select the Dataset button n choose file that contains pics to be trained,hundrand of thousand of pictures with corresponding labels .
+      choose type of architechture i.e.LeNet. with default epoch,ect.
+      create'em.
+[Train the model]:
+      Select 'classification' n create model with dataset created before,choose LeNet arch.
+      finish the model training.
+      [Visualization]:choose 'custom network' when training a new model,click 'Visualization' to generate the net image of working layers.
+[Classify single pic]:
+      choose the directory  of that picture && classify.
+[Classify list of images]:
+      Choose the list of pictures with their directories written in a var.txt file.
+      classify'em.
+      
+     
+     
+   

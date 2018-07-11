@@ -14,5 +14,8 @@ After installation:
       classify'em.
       
      
+ [OBJ detection]
+ [ERROR] can not find a local file in path of &CAFFE_ROOT/example/kitti/lenet_network.prototxt
+ [ERROR] Bad network: Not a valid NetParameter: 72:3 : Message type "caffe.LayerParameter" has no field named "detectnet_groundtruth_param".
      
    

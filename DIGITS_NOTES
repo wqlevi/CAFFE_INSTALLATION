@@ -1,0 +1,59 @@
+
+Training vs. programming
+
+The fundamental difference between artificial intelligence (AI) and traditional programing is that AI learns while traditional algorithms are programmed. 
+
+The Big Bang in Machine Learning
+
+    Data: In the era of big data, we create ~2.5 quintillion bytes of data per day. Free datasets are available from places like Kaggle.com and UCI. Crowdsourced datasets are built through creative approaches - e.g. Facebook asking users to "tag" friends in their photos to create labeled facial recognition datasets. More complex datasets are generated manually by experts - e.g. asking radiologists to label specific parts of the heart.
+    Computers designed to learn - software: Artificial neural networks are inspired by the human brain. Like their biological counterparts, they are structured to understand (and represent) complex concepts, but their biggest strength is their ability to learn from data and feedback. The "deep" in deep learning refers to many layers of artificial neurons, each of which contribute to the network's performance.
+    Computers designed to learn - hardware: The computing that powers deep learning is intensive, but not complex. Processing huge datasets through deep networks is made possible by parallel processing, a task tailor made for the GPU.
+***********************************************************************************************************************
+***********************************************************************************************************************
+Your data
+
+While there is an endless amount of analysis that we could do on the data, make sure you at least note the following:
+
+    This data is labeled. Each image in the dataset is paired with a label that informs the computer what number the image represents, 0-9. We're basically providing a question with its answer, or, as our network will see it, a desired output with each input. These are the "examples" that our network will learn from.
+    Each image is simply a digit on a plain background. Image classification is the task of identifying the predominant object in an image. For a first attempt, we're using images that only contain one object. We'll build skills to deal with messier data in subsequent labs.
+
+This data comes from the MNIST dataset which was created by Yann LeCun. It's largely considered the "Hello World," or introduction, to deep learning.
+
+Learning from our data - Training a neural network
+
+Next, we're going to use our data to train an artificial neural network. Like its biological inspiration, the human brain, artificial neural networks are learning machines. Also like the brain, these "networks" only become capable of solving problems with experience, in this case, interacting with data. Throughout this lab, we'll refer to "networks" as untrained artificial neural networks and "models" as what networks become once they are trained (through exposure to data).
+[IMAGE1]
+For image classification (and some other tasks), DIGITS comes pre-loaded with award-winning networks. As we take on different challenges in subsequent labs, we'll learn more about selecting networks and even building our own. However, to start, weighing the merits of different networks would be like arguing about the performance of different cars before driving for the first time. Building a network from scratch would be like building your own car. Let's drive first. We'll get there.
+
+
+[STEP2]
+Again, for this first round of training let's keep it simple. The following are the fewest settings you could possibly set to successfully train a network.
+
+    We need to choose the dataset we just created. Select our Default Options Small Digits Dataset dataset.
+    We need to tell the network how long we want it to train. An epoch is one trip through the entire training dataset. Set the number of Training Epochs to 5 to give our network enough time to learn something, but not take all day. This is a great setting to experiment with.
+    We need to define which network will learn from our data. Since we stuck with default settings in creating our dataset, our database is full of 256x256 color images. Select the network AlexNet, if only because it expects 256x256 color images.
+    We need to name the model, as hopefully we'll do a lot of these. We chose My first model.
+
+Inference
+
+Now that our neural network has learned something, inference is the process of making decisions based on what was learned. The power of our trained model is that it can now classify unlabeled images.
+[IMAGE2]
+Three quantities are reported: training loss, validation loss, and accuracy. The values of training and validation loss should have decreased from epoch to epoch, although they may jump around some. The accuracy is the measure of the ability of the model to correctly classify the validation data. If you hover your mouse over any of the data points, you will see its exact value. In this case, the accuracy at the last epoch is about 87%. Your results might be slightly different than what is shown here, since the initial networks are generated randomly.
+
+Analyzing this graph, one thing that jumps out is that accuracy is increasing over time and that loss is decreasing. A natural question may be, "will the model keep improving if we let it train longer?" This is the first intervention that we'll experiment with and discuss.
+
+[OBJ_DETECTION]
+1.Data set with numerous pics and labels
+2.Build new data set to produce .prototxt file
+3.Ready to build new model,with obj_detection_network.prototxt and corresponding pretrained model,such as '.caffemodel'
+ |-> solver type:ADAM
+ |-> learning rate:1e-5
+ |-> epochs:100
+4.NVCaffe required,with attached to nvidia-docker
+ |-> docker required
+ |-> protobuf required for 'make' nvcaffe
+
+[TO BE CONTINUE...]
+
+
+source:https://nvidia.qwiklab.com/focuses/40?parent=catalog

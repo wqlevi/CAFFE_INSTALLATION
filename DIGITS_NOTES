@@ -52,7 +52,7 @@ Analyzing this graph, one thing that jumps out is that accuracy is increasing ov
 4.NVCaffe required,with attached to nvidia-docker
  |-> docker required
  |-> protobuf required for 'make' nvcaffe
-   |->[Solving]1.replace latest version of protoc3.0 to protoc 2.6；in case anaconda was installed, use 'conda install -c anaconda protobuf=2.6.1' to downgrade the protoc
+   |->[Solved]1.replace latest version of protoc3.0 to protoc 2.6；in case anaconda was installed,use 'conda install -c anaconda protobuf=2.6.1' to downgrade the protoc
 
 [TO BE CONTINUE...]
 

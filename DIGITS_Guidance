@@ -18,4 +18,6 @@ After installation:
  [ERROR] can not find a local file in path of &CAFFE_ROOT/example/kitti/lenet_network.prototxt
  [ERROR    ]Bad network: Not a valid NetParameter: 72:3 : Message type "caffe.LayerParameter" has no field named "detectnet_groundtruth_param".
  [   SOLVED]install nvcaffe && set CAFFE_ROOT to nvcaffe && install pycaffe    
+ [ERROR    ]'google.protobuf.pyext._message.RepeatedScalarConta' object has no attribute '_values'
+ [   SOLVED]Downgrade the protobuf version to 2.6 && compile pycaffe again.
    

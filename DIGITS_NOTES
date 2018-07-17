@@ -54,7 +54,10 @@ Analyzing this graph, one thing that jumps out is that accuracy is increasing ov
  |-> protobuf required for 'make' nvcaffe
    |->[Solved]1.replace latest version of protoc3.5 to protoc 2.6；in case anaconda was installed,use 'conda install -c anaconda protobuf=2.6.1' to downgrade the protoc
    |->[Solving]Anacoda with usr/local/bin/protoc will always conflict on the version,as advised on internet,version 2.6 is viable;use 'whereis XXX' to find where XXX was installed,use 'which XXX' to find the default XXX. use 'find / -name XXX' to find XXX.
-   |->[Solving]Using updated protoc 3.5 to make nvcaffe version-17,same error.
+   |->[Solving]Using updated protoc 3.0,as advised in the log file, to make nvcaffe version-0.17.0,fixed.
+ |->trouble w/ 'make runtest',a overload of CUP or mainboard ,as supposed.
+5.'make python' ,set PYTHONPATH=~/nvcaffe/python
+
 [TO BE CONTINUE...]
 
 

@@ -42,7 +42,7 @@ Three quantities are reported: training loss, validation loss, and accuracy. The
 
 Analyzing this graph, one thing that jumps out is that accuracy is increasing over time and that loss is decreasing. A natural question may be, "will the model keep improving if we let it train longer?" This is the first intervention that we'll experiment with and discuss.
 
-[OBJ_DETECTION]
+[OBJ_DETECTION][nvcaffe-0.15.1 or later required]
 1.Data set with numerous pics and labels
 2.Build new data set to produce .prototxt file
 3.Ready to build new model,with obj_detection_network.prototxt and corresponding pretrained model,such as '.caffemodel'

@@ -57,6 +57,9 @@ Analyzing this graph, one thing that jumps out is that accuracy is increasing ov
    |->[Solving]Using updated protoc 3.0,as advised in the log file, to make nvcaffe version-0.17.0,fixed.
  |->trouble w/ 'make runtest',a overload of CUP or mainboard ,as supposed.
 5.'make python' ,set PYTHONPATH=~/nvcaffe/python
+6.[ERROR]Train Caffe Model task failed with error code -11,
+   |->[Solving]upgrade version of protoc 3 to protoc 3.5
+
 
 [TO BE CONTINUE...]
 

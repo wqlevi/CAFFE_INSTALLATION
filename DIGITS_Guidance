@@ -20,7 +20,9 @@ After installation:
  [   SOLVED]install nvcaffe && set CAFFE_ROOT to nvcaffe && install pycaffe    
  [ERROR    ]'google.protobuf.pyext._message.RepeatedScalarConta' object has no attribute '_values'
  [   SOLVED]Downgrade the protobuf version to 2.6 && compile pycaffe again.
-   
+ 
+ [ERROR    ].build_release/lib/libcaffe-nv.so: undefined reference to `google::protobuf::io::CodedInputStream::ReadVarint32Fallback(unsigned int)'
+
  [Create dataset]:
       such kitti example data can be drawn from website
  [Train the model]:

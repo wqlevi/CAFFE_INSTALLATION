@@ -1,0 +1,60 @@
+make runtest:
+[error]:[ RUN      ] CuDNNBatchNormLayerTest/0.TestForward
+*** Aborted at 1531652723 (unix time) try "date -d @1531652723" if you are using GNU date ***
+PC: @     0x2b4747e2c7cd (unknown)
+*** SIGSEGV (@0x34) received by PID 22346 (TID 0x2b47392e0b00) from PID 52; stack trace: ***
+    @     0x2b4742695330 (unknown)
+    @     0x2b4747e2c7cd (unknown)
+    @     0x2b4741a4e7d7 caffe::CuDNNBatchNormLayer<>::Forward_gpu()
+    @           0x47b4b6 caffe::Layer<>::Forward()
+    @           0x68d6d1 caffe::CuDNNBatchNormLayerTest_TestForward_Test<>::TestBody()
+    @           0x8cb473 testing::internal::HandleExceptionsInMethodIfSupported<>()
+    @           0x8c2157 testing::Test::Run()
+    @           0x8c21fe testing::TestInfo::Run()
+    @           0x8c2305 testing::TestCase::Run()
+    @           0x8c5648 testing::internal::UnitTestImpl::RunAllTests()
+    @           0x8c58d7 testing::UnitTest::Run()
+    @           0x4699e7 main
+    @     0x2b47428c4f45 (unknown)
+    @           0x471529 (unknown)
+    @                0x0 (unknown)
+make: *** [runtest] Segmentation fault (core dumped)
+
+
+new NVIDIA driver[390.67] installed
+
+Using nvcaffe 0.17.0:
+Fixing bugs: 'make all'->ln -s ~/x86.../libturbojpeg.so.0.1.0 ~/x86.../libtuborjpeg.so
+[ERROR][ RUN      ] EuclideanLossLayerTest/3.TestGradient
+F0716 21:06:56.391139 31464 math_functions.cu:602] Check failed: error == cudaSuccess (8 vs. 0)  invalid device function
+*** Check failure stack trace: ***
+    @     0x2b455b484daa  (unknown)
+    @     0x2b455b484ce4  (unknown)
+    @     0x2b455b4846e6  (unknown)
+    @     0x2b455b487687  (unknown)
+    @     0x2b455d1ed95f  caffe::caffe_gpu_sub<>()
+    @     0x2b455d12c344  caffe::EuclideanLossLayer<>::Forward_gpu()
+    @           0x486078  caffe::Layer<>::Forward()
+    @           0x48ef5d  caffe::GradientChecker<>::CheckGradientSingle()
+    @           0x48fcab  caffe::GradientChecker<>::CheckGradientExhaustive()
+    @           0x78ce45  caffe::EuclideanLossLayerTest_TestGradient_Test<>::TestBody()
+    @           0x8804b3  testing::internal::HandleExceptionsInMethodIfSupported<>()
+    @           0x8794b7  testing::Test::Run()
+    @           0x87955e  testing::TestInfo::Run()
+    @           0x879665  testing::TestCase::Run()
+    @           0x879908  testing::internal::UnitTestImpl::RunAllTests()
+    @           0x879ba7  testing::UnitTest::Run()
+    @           0x477a70  main
+    @     0x2b455e745f45  (unknown)
+    @           0x482ae9  (unknown)
+    @              (nil)  (unknown)
+make: *** [runtest] Aborted (core dumped)
+[SOLVED]edit the makefile.config in nvcaffe, switch CUDA_ARCH to valid compute value(=30)
+
+[ERROR]edition of protobuf may cause bunches of troubles
+[SOLVING]as advised on NVIDIA/caffe GitHub page:
+https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildCaffe.md
+https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildProtobuf.md
+https://github.com/google/protobuf/blob/master/src/README.md
+Nvcaffe & DIGITS support version 3.2.X of protobuf to be compatible in both.
+one thing shall be mentioned is that 'export PATH=/usr/local/bin','LIBPATH=/usr/local/lib'(as the installation of protoc and libprotobuf) and '$ldconfig' after the changes.

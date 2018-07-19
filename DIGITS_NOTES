@@ -58,7 +58,7 @@ Analyzing this graph, one thing that jumps out is that accuracy is increasing ov
  |->trouble w/ 'make runtest',a overload of CUP or mainboard ,as supposed.
 5.'make python' ,set PYTHONPATH=~/nvcaffe/python
 6.[ERROR]Train Caffe Model task failed with error code -11,
-   |->[Solving]upgrade version of protoc 3 to protoc 3.5
+   |->[Solved]upgrade version of protoc 3 to protoc 3.5, with respect to official requirements on github. 
 
 
 [TO BE CONTINUE...]

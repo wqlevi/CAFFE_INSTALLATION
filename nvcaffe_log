@@ -52,9 +52,30 @@ make: *** [runtest] Aborted (core dumped)
 [SOLVED]edit the makefile.config in nvcaffe, switch CUDA_ARCH to valid compute value(=30)
 
 [ERROR]edition of protobuf may cause bunches of troubles
-[SOLVING]as advised on NVIDIA/caffe GitHub page:
+[SOLVED]as advised on NVIDIA/caffe GitHub page:
 https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildCaffe.md
 https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildProtobuf.md
 https://github.com/google/protobuf/blob/master/src/README.md
 Nvcaffe & DIGITS support version 3.2.X of protobuf to be compatible in both.
 one thing shall be mentioned is that 'export PATH=/usr/local/bin','LIBPATH=/usr/local/lib'(as the installation of protoc and libprotobuf) and '$ldconfig' after the changes.
+
+
+NVIDIA fork of caffe 'https://github.com/NVIDIA/DIGITS/blob/master/docs/BuildCaffe.md' failed with following errors:
+[ 87%] Linking CXX executable device_query
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTget_dataset_ndims'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTmake_dataset_double'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTmake_dataset_int'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTread_dataset_float'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTmake_dataset_float'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTread_dataset_double'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTmake_dataset_string'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTread_dataset_int'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTfind_dataset'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTget_dataset_info'
+../lib/libcaffe-nv.so.0.15.14: undefined reference to `H5LTread_dataset_string'
+collect2: error: ld returned 1 exit status
+
+This can be fixed by edit "caffe/cmake/Dependencies.cmake", at line 28
+list(APPEND Caffe_LINKER_LIBS ${HDF5_LIBRARIES})to
+list(APPEND Caffe_LINKER_LIBS ${HDF5_LIBRARIES} ${HDF5_HL_LIBRARIES})
+This problem does not exist on original BVLC/caffe.

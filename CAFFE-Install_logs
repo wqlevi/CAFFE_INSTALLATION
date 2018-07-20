@@ -1,4 +1,4 @@
-#######################################[INSTALELD]CAFFE
+#######################################[INSTALELD]BVLC/CAFFE#########################################
 [INSTALLED]KERNEL:4.4.0-31 generic
 [INSTALLED]NVIDIA Driver:
 +-----------------------------------------------------------------------------+
@@ -30,16 +30,14 @@ version :7_7.1.4.18-1+cuda8.0
 [INSTALELD]GCC:
 version 4.8.4
 
-[INSTALLED]boost:
+[INSTALLED]boost:1.5
 
 [INSTALELD]BLAS w/ ATLAS:
 
 what's left:
 [INSTALLED]pycaffe
-###########################################[INSTALLED]DIGITS
-[INSTALLED]caffe
-[INSTALLED]cuda8.0
-
+[INSTALLED]protobuf --version 
+           $ 3.2
 Start digits at: http://localhost/
 ############################ERROR
 

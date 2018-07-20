@@ -47,10 +47,10 @@ Analyzing this graph, one thing that jumps out is that accuracy is increasing ov
 2.Build new data set to produce .prototxt file
 3.Ready to build new model,with obj_detection_network.prototxt and corresponding pretrained model,such as '.caffemodel'
  |-> solver type:ADAM
- |-> learning rate:1e-5
- |-> epochs:100
+ |-> learning rate:1e-5 
+ |-> epochs:100 #100 rounds included in training process
+ |-> batch_size: 1 #representing online learing,but not easy to converge;larger size will cause overflow of GPU memory, higher efficiency to converge though
 4.NVCaffe required,with attached to nvidia-docker
- |-> docker required
  |-> protobuf required for 'make' nvcaffe
    |->[Solved]1.replace latest version of protoc3.5 to protoc 2.6；in case anaconda was installed,use 'conda install -c anaconda protobuf=2.6.1' to downgrade the protoc
    |->[Solving]Anacoda with usr/local/bin/protoc will always conflict on the version,as advised on internet,version 2.6 is viable;use 'whereis XXX' to find where XXX was installed,use 'which XXX' to find the default XXX. use 'find / -name XXX' to find XXX.
@@ -58,7 +58,8 @@ Analyzing this graph, one thing that jumps out is that accuracy is increasing ov
  |->trouble w/ 'make runtest',a overload of CUP or mainboard ,as supposed.
 5.'make python' ,set PYTHONPATH=~/nvcaffe/python
 6.[ERROR]Train Caffe Model task failed with error code -11,
-   |->[Solved]upgrade version of protoc 3 to protoc 3.5, with respect to official requirements on github. 
+   |->[Solved]upgrade version of protoc 3 to protoc 3.2, with respect to official requirements on github. 
+7.[ERROR]Unfortunately, failed with batch_size=1, still run out of memory, which is officially required to be no less than 12GB.    
 
 
 [TO BE CONTINUE...]

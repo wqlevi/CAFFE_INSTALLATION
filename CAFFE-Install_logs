@@ -1,4 +1,6 @@
 #######################################[INSTALELD]BVLC/CAFFE#########################################
+#   Here listed step-by-step set up tutorial for Origional version of caffe from Berkely Vision     #
+#####################################################################################################
 [INSTALLED]KERNEL:4.4.0-31 generic
 [INSTALLED]NVIDIA Driver:
 +-----------------------------------------------------------------------------+

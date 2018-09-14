@@ -76,3 +76,10 @@ collect2: error: ld returned 1 exit status
 list(APPEND Caffe_LINKER_LIBS ${HDF5_LIBRARIES})to
 list(APPEND Caffe_LINKER_LIBS ${HDF5_LIBRARIES} ${HDF5_HL_LIBRARIES})
 This problem does not exist on original BVLC/caffe.
+
+LD -o .build_release/lib/libcaffe-nv.so.0.15.14
+/usr/bin/ld: cannot find -lhdf5_serial_hl
+/usr/bin/ld: cannot find -lhdf5_serial
+collect2: error: ld returned 1 exit status
+make: *** [.build_release/lib/libcaffe-nv.so.0.15.14] Error 1
+

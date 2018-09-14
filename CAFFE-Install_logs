@@ -36,6 +36,9 @@ version 4.8.4
 
 [INSTALELD]BLAS w/ ATLAS:
 
+[INSTALLED]OPENCV:
+2.4.13# version >=3.0 will not be compatible in detection.
+
 what's left:
 [INSTALLED]pycaffe
 [INSTALLED]protobuf --version

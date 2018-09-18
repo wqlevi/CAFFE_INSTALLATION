@@ -27,3 +27,5 @@ After installation:
       such kitti example data can be drawn from website
  [Train the model]:
       select 'ADAM' type with 'none' pic filter and 0.0001 learning rate
+ [ERROR    ]faild to log in digits server
+ [   SOLVED]use $kill -9 [Port number] && restart $./digits-deserver

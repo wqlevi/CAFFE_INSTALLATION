@@ -1,0 +1,7 @@
+Blob is the way caffe store data and communicate them;
+
+a 4D blob is like: number N x channel K x height H x width W;
+Number / N is the batch size of the data;
+Channel / K is the feature dimension e.g. for RGB images K = 3;
+For a convolution layer with 96 filters of 11 x 11 spatial dimension and 3 inputs the blob is 96 x 3 x 11 x 11.
+ For an inner product / fully-connected layer with 1000 output channels and 1024 input channels the parameter blob is 1000 x 1024.

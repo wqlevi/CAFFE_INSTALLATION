@@ -58,3 +58,20 @@ Unable to access $sudo apt-get install digits  ,cuz such ppa source isn't a defa
 [SOLVED][ERROR] CUDNN_STATUS_NOT_INITIALIZED： Verify the cudnn installation by run sample: ./mnistCUDNN , if still get same error,that indicates the 'cudnn.h' file is not found at dir:/usr/include.
 sloved by reinstall the cudnn in corresponding to the cuda and OS version.
 
+#HDF5 solution path
+#INCLUDE_DIRS := $(PYTHON_INCLUDE) /usr/local/include /usr/lib/x86_64-linux-gnu/hdf5/serial/include
+#LIBRARY_DIRS := $(PYTHON_LIB) /usr/local/lib /usr/lib /usr/lib/x86_64-linux-gnu/hdf
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/opt/biosoft/hdf5-1.10.2-patch1/lib/
+export PYTHONPATH=~/caffe/python
+
+#CAFFE PATH
+export CAFFE_ROOT=~/caffe
+
+#DIGITS path
+export DIGITS_ROOT=~/digits
+
+#CMAKE path
+export CMAKE_ROOT=~/Dowloads/cmake-3.12.2
+#EIGEN3_COLMAP path
+export EIGEN_INCLUDE_DIR=/home/wq/colmap/cmake/eigen3.cmake 
+
